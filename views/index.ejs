@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> My Thoughts Express App </title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>Welcome to My Thoughts Express App</h1>
+  <h2>Users</h2>
+  <ul>
+    <% users.forEach(user => { %>
+      <li><%= user.name %> (<%= user.username %>) - <%= user.email %></li>
+    <% }) %>
+  </ul>
+  <form action="/api/users" method="post">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <button type="submit">Add User</button>
+  </form>
+</body>
+</html>
